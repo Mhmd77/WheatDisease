@@ -3,6 +3,7 @@ package ir.hoshmand.zamin.iran.wheatdisease.models;
 import java.util.ArrayList;
 
 public class Question {
+    private Question prev;
     private String question;
     private ArrayList<Answer> answers;
 
@@ -27,4 +28,11 @@ public class Question {
         answers.add(answer);
     }
 
+    public Question getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Question prev) {
+        this.prev = prev;
+    }
 }

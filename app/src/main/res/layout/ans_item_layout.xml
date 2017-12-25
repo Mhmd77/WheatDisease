@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="1dp"
     android:orientation="horizontal"
     android:padding="3dp">
@@ -12,17 +12,19 @@
         android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="#30e74c3c"
-        android:layout_weight="0.9">
+        android:layout_weight="0.9"
+        android:background="#30e74c3c">
 
-        <TextView
+        <me.grantland.widget.AutofitTextView
             android:id="@+id/txtBugText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
+            android:maxLines="4"
             android:gravity="start|center"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/greyText" />
+            android:textColor="@color/greyText"
+            app:minTextSize="16sp" />
     </LinearLayout>
 
 

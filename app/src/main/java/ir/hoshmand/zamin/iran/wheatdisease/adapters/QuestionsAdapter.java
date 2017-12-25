@@ -60,9 +60,9 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtId.setText(String.valueOf(position + 1) + "");
+        holder.txtId.setText(String.valueOf(position + 1));
         holder.txtId.setTypeface(TypeFaceHandler.bYekanLight);
-        holder.txtExp.setText(answers.get(position).getTitle() + "");
+        holder.txtExp.setText(answers.get(position).getTitle());
         holder.txtExp.setTypeface(TypeFaceHandler.bYekanLight);
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override

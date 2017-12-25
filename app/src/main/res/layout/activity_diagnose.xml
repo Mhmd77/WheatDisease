@@ -28,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
+                <me.grantland.widget.AutofitTextView
                     android:id="@+id/txtQuestion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -36,6 +36,7 @@
                     android:drawableEnd="@drawable/ic_help_black_36dp"
                     android:drawableRight="@drawable/ic_help_black_36dp"
                     android:gravity="center"
+                    android:maxLines="2"
                     android:padding="10dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 

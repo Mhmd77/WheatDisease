@@ -19,6 +19,7 @@ import ir.hoshmand.zamin.iran.wheatdisease.R;
 import ir.hoshmand.zamin.iran.wheatdisease.adapters.QuestionsAdapter;
 import ir.hoshmand.zamin.iran.wheatdisease.models.Answer;
 import ir.hoshmand.zamin.iran.wheatdisease.models.Question;
+import ir.hoshmand.zamin.iran.wheatdisease.ui.TypeFaceHandler;
 import me.grantland.widget.AutofitTextView;
 
 public class DiagnoseActivity extends AppCompatActivity {
@@ -48,10 +49,18 @@ public class DiagnoseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diagnose);
         ButterKnife.bind(this);
         setData();
+        setFonts();
         txtQuestion.setText(question.getQuestion());
         adapter = new QuestionsAdapter(question.getAnswers(), this);
         ansRecyclerView.setAdapter(adapter);
         ansRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void setFonts() {
+        new TypeFaceHandler(getAssets());
+        txtQuestion.setTypeface(TypeFaceHandler.bYekanLight);
+        txtAns.setTypeface(TypeFaceHandler.bYekanLight);
+        btnUploadImage.setTypeface(TypeFaceHandler.sultanBold);
     }
 
     private void setData() {
@@ -88,6 +97,14 @@ public class DiagnoseActivity extends AppCompatActivity {
         Answer ans23 = new Answer("آیا علایم بیماری بصورت تغییر رنگ و سیاه شدن ریشه اصلی ظاهر شده و سایر ریشه های فرعی تغییر رنگ چندانی نمی دهند", "احتمالاعامل بیماری پوسیدگی معمولی ریشه گندم است");
         Answer ans24 = new Answer("آیا علایم بیماری بصورت تغییر رنگ تمام سیستم ریشه ظاهر می شود و ریشه ها و ناحیه طوقه به رنگ قهو ه ای شکلاتی در می آید و بو ته ای آلوده در مزرعه قبل از موعد سفید رنگ می شوند ", "احتمالاعامل بیماری پوسیدگی معمولی ریشه گندم است");
         Answer ans25 = new Answer("آیا علایم بیماری بصورت سفید شدن  قبل از موعد بو ته ها  در مزرعه ظاهر می شود و بوته های به راحتی از خاک کنده می شوند و رنگ ریشه های آلودگی سیاه براق است", "احتمالاعامل بیماری پاخوره گندم است");
+        q1.setPrev(null);
+        q2.setPrev(q1);
+        q3.setPrev(q2);
+        q4.setPrev(q2);
+        q5.setPrev(q1);
+        q6.setPrev(q5);
+        q7.setPrev(q6);
+        q8.setPrev(q1);
         q1.addAnswers(ans1);
         q1.addAnswers(ans2);
         q1.addAnswers(ans3);
@@ -122,9 +139,9 @@ public class DiagnoseActivity extends AppCompatActivity {
             txtAns.setText(answer.getAns());
             ansFlipper.showNext();
         } else {
-
             txtQuestion.setText(answer.getNextQuestion().getQuestion());
             adapter.setAnswers(answer.getNextQuestion().getAnswers());
+            question = answer.getNextQuestion();
         }
     }
 
@@ -132,7 +149,18 @@ public class DiagnoseActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btnBack:
-                finish();
+
+                if (question.getPrev() == null) {
+                    finish();
+                } else {
+                    if (ansFlipper.getDisplayedChild() == 1)
+                        ansFlipper.showNext();
+                    else
+                        question = question.getPrev();
+                    txtQuestion.setText(question.getQuestion());
+                    adapter.setAnswers(question.getAnswers());
+                }
+
                 break;
             case R.id.btnUploadImage:
                 Snackbar.make(btnUploadImage, "آپلود عکس", Snackbar.LENGTH_SHORT).show();
