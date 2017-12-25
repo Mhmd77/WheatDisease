@@ -6,9 +6,14 @@ public class Answer {
     private String title, ans;
     private Question nextQuestion;
 
-    public Answer(String title,Question nextQuestion) {
+    public Question getNextQuestion() {
+        return nextQuestion;
+    }
+
+    public Answer(String title, Question nextQuestion) {
         this.title = title;
         this.nextQuestion=nextQuestion;
+
 
     }
 

@@ -23,11 +23,8 @@ public class Question {
         return answers;
     }
 
-    public void addAnswers(String answer) {
-        answers.add(new Answer(answer));
+    public void addAnswers(Answer answer) {
+        answers.add(answer);
     }
 
-    public void addAnswers(String title, String answer) {
-        answers.add(new Answer(title, answer));
-    }
 }
