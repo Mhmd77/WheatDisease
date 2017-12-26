@@ -1,37 +1,32 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:autofit="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    card_view:cardElevation="3dp"
-    card_view:cardUseCompatPadding="true">
+    android:layout_height="140dp"
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/img_0" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/txtMenuItem"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <ImageView
-            android:id="@+id/imgMenuItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1" />
-
-        <me.grantland.widget.AutofitTextView
-            android:id="@+id/txtMenuItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:maxLines="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/greyText"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            autofit:minTextSize="8sp" />
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="3dp"
+        android:background="@drawable/bg_text_box_2"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/greyText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        autofit:minTextSize="8sp" />
+</LinearLayout>
