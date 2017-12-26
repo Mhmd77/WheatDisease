@@ -48,12 +48,20 @@ public class DiagnoseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnose);
         ButterKnife.bind(this);
+        setToolbar();
         setData();
         setFonts();
         txtQuestion.setText(question.getQuestion());
         adapter = new QuestionsAdapter(question.getAnswers(), this);
         ansRecyclerView.setAdapter(adapter);
         ansRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void setToolbar() {
+        ((TextView) toolbar.findViewById(R.id.txtTitleToolbar)).setText(R.string.title_diagnose);
+        ((TextView) toolbar.findViewById(R.id.txtTitleToolbar)).setTypeface(TypeFaceHandler.sultanBold);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
     }
 
     private void setFonts() {

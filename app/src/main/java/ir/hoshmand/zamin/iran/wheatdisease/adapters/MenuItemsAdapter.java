@@ -1,6 +1,7 @@
 package ir.hoshmand.zamin.iran.wheatdisease.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ir.hoshmand.zamin.iran.wheatdisease.R;
+import ir.hoshmand.zamin.iran.wheatdisease.activities.DiseaseActivity;
 import ir.hoshmand.zamin.iran.wheatdisease.models.MenuItem;
 import ir.hoshmand.zamin.iran.wheatdisease.ui.TypeFaceHandler;
 
@@ -48,28 +50,30 @@ public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.View
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View v = inflater.inflate(R.layout.menu_item_layout, parent, false);
-        GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) v.getLayoutParams();
+        /*GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) v.getLayoutParams();
         int height;
         if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             height = parent.getMeasuredHeight() / 4;
         else
             height = parent.getMeasuredHeight() / 2;
         params.height = height;
-        v.setLayoutParams(params);
+        v.setLayoutParams(params);*/
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        final String name = values.get(position).getTitle();
+        final String name = values.get(position).getName();
         holder.txtHeader.setText(name);
         holder.txtHeader.setTypeface(TypeFaceHandler.bYekanLight);
         holder.img.setImageDrawable(values.get(position).getImage());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Intent intent = new Intent(context, DiseaseActivity.class);
+                intent.putExtra("DiseaseID", position);
+                context.startActivity(intent);
             }
         });
     }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:orientation="horizontal"
+    android:padding="3dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.9"
+        android:background="#30303F9F">
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txtTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:gravity="start|center"
+            android:maxLines="4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/greyText"
+            app:minTextSize="16sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.01"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textColor="#FFF" />
+</LinearLayout>

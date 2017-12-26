@@ -9,35 +9,30 @@ import java.util.ArrayList;
  */
 
 public class MenuItem {
-    private int id;
     private String name;
-    private ArrayList<Title>titles;
+    private ArrayList<Title> titles;
     private Drawable image;
 
     public MenuItem(String name, Drawable image) {
         this.name = name;
         this.image = image;
+        titles = new ArrayList<>();
     }
-    public ArrayList<Title> getTitles(){
+
+    public ArrayList<Title> getTitles() {
         return titles;
     }
-    public void addTitle(Title title){
-        titles.add(title);
 
+    public void addTitle(Title title) {
+        titles.add(title);
     }
+
     public Drawable getImage() {
         return image;
     }
 
-    public String getTitle() {
+    public String getName() {
         return name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

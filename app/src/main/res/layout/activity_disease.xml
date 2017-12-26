@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:orientation="vertical"
+    tools:context="ir.hoshmand.zamin.iran.wheatdisease.activities.DiseaseActivity">
+
+    <include
+        layout="@layout/main_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@drawable/bg_text_box_2"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_16" />
+
+    <ViewFlipper
+        android:id="@+id/recyclerFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/titlesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_weight="1" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/levelsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_weight="1" />
+        </android.support.v7.widget.CardView>
+    </ViewFlipper>
+</LinearLayout>

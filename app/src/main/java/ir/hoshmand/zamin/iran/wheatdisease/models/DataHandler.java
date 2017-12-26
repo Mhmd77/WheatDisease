@@ -13,6 +13,7 @@ public class DataHandler {
     public static ArrayList<MenuItem> disease;
 
     public DataHandler(Context context) {
+        disease = new ArrayList<>();
         MenuItem menuItem = new MenuItem("زنگ زرد (نواری) گندم", ContextCompat.getDrawable(context, R.drawable.img_0));
         Title title = new Title("شرح");
         title.addLevel("زنگ زرد مهمترین بیماری گندم محسوب می شود و در صورت همه جا گیر شدن می تواند بسیار خطرناک باشد");
@@ -89,7 +90,7 @@ public class DataHandler {
         menuItem.addTitle(title);
         disease.add(menuItem);
 
-        menuItem = new MenuItem(, "سفيدك پودري گندم ", ContextCompat.getDrawable(context, R.drawable.img_3));
+        menuItem = new MenuItem("سفيدك پودري گندم ", ContextCompat.getDrawable(context, R.drawable.img_3));
         title = new Title("اهمیت بیماری");
         title.addLevel("در پاره ای از مناطق کشور بویژه در استانهای گلستان، مازندران، خراسان رضوی و شمالی، اردبیل و تهران (ورامین) خسارت قابل توجهی میزند.");
         title.addLevel("عامل بیماری قارچ  Blumeria graminis f.sp.  tritici ");
@@ -327,7 +328,7 @@ public class DataHandler {
         title = new Title("عامل بیماری");
         title.addLevel(":در ایران دو گونه غالب است: Fusarium culmorum و F. pseudograminearum");
         menuItem.addTitle(title);
-        title=new Title("مدیریت بیماری");
+        title = new Title("مدیریت بیماری");
         title.addLevel("جلوگیری از تنش های آبی در مرحله داشت");
         title.addLevel("رعایت تناوب گندم با دانه های روغنی و حبوبات");
         title.addLevel("ارقام گندم دورم خیلی حساس هستند");
@@ -337,8 +338,8 @@ public class DataHandler {
         menuItem.addTitle(title);
         disease.add(menuItem);
 
-        menuItem=new MenuItem("پاخوره گندم",ContextCompat.getDrawable(context, R.drawable.img_15));
-        title=new Title("شرح");
+        menuItem = new MenuItem("پاخوره گندم", ContextCompat.getDrawable(context, R.drawable.img_15));
+        title = new Title("شرح");
         title.addLevel("علائم بارز بیماری سفید شدن خوشه های بوته های آلوده قبل از خو شه های سالم.");
         title.addLevel("ریشه های آلوده سیاه رنگ و براق می شوند به ویژه مغز ریشه سیاه رنگ دیده می شوند.");
         title.addLevel("در زیر بینوکلر میسیلیومهای سیاه رنگ که ریزومورف قارچ است در سطح ریشه های آلوده دیده می شوند");
@@ -347,14 +348,13 @@ public class DataHandler {
         title.addLevel("با کشت مکرر گندم جمعیت آن در خاک سال به سال بیشتر می شود.");
         title.addLevel("شدت بیماری در خاکهای سنگین و قلیایی بیشتر است");
         menuItem.addTitle(title);
-        title=new Title("مدیریت بیماری پاخوره گندم");
+        title = new Title("مدیریت بیماری پاخوره گندم");
         title.addLevel("استفاده از تناوب زراعی با استفاده از گیاهان غیر میزبان نظیر کلزا ، چغندر قند و آیش به مدت حداقل یکسال");
         title.addLevel("از بین بردن گندم های خودرو و علفهای هرز گرامینه در زمان تناوب");
         title.addLevel("هیچ رقم مقاومی برای این بیماری وجود ندارد");
         title.addLevel("ضد عفوني بذور گندم با استفاده از قارچكش هاي: پروپیکونازول 2 در هزار و تریادیمنول 3/0 در هزار بمنظور كاهش بيماري پاخوره گندم.");
         menuItem.addTitle(title);
         disease.add(menuItem);
-
 
 
     }
